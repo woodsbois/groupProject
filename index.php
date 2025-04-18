@@ -85,7 +85,29 @@
                 <div id="project-table" class="table-container active">
                     <!-- Create Project Toggle -->
                     <button onclick="toggleForm('project-form')">+ Create New Project</button>
+                    <button onclick="toggleForm('assign-linguist-to-project')">+ Add Linguist to Project</button>
 
+
+                        <!-- Hidden form for Assign Linguist to Project -->
+                        <div id="assign-linguist-to-project" class="hidden">
+                        <h4>Assign Linguist to Existing Project</h4>
+                                                <!-- PHP DATA TO ASSIGN LINGUIST GOES HERE -->
+                        <form id="assign-linguist-project-form" action="assign_linguist_to_project.php" method="POST">
+                            <select name="project-id">
+                                <option value="1">Translate App</option>
+                                <option value="2">Translate TV</option>
+                                <option value="3">Sports TV</option>
+                            </select>
+                            <select name="linguist-id">
+                                <option value="1">Maria (Spanish)</option>
+                                <option value="2">John (English)</option>
+                                <option value="3">Sarah (French)</option>
+                            </select>
+                            <!-- Task Description Field -->
+                            <textarea name="task-desc" placeholder="Task description or instructions..." rows="4" required></textarea>
+                            <button type="submit">Assign Linguist</button>
+                        </form>
+                        </div>
                         <!-- Hidden form -->
                         <div id="project-form" class="hidden">
                         <h4>Create a New Project</h4>
